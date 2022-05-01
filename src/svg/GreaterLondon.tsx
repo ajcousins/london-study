@@ -1,51 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface Style {
-	canvas: {
-		fillColor: string;
-	}
-  borough: {
-    fillColor: string;
-    strokeColor: string;
-    strokeWidth: string;
-    strokeLinecap: 'round' | 'butt' | 'square' | 'inherit' | undefined;
-    strokeLinejoin: 'round' | 'inherit' | 'miter' | 'bevel' | undefined;
-    strokeMiterlimit: string;
-  };
-	greaterLondon: {
-		strokeColor: string;
-		strokeWidth: string,
-	},
-	water: {
-		fillColor: string,
-		strokeColor: string,
-		strokeWidth: string
-	}
-}
+/*
+- Build data before in json array using backend (non-react) script so that it's is ready
+to be rendered by react and state doesn't have to be updated asyncronously.
+- Keeps api key secret.
+- Enables higher resolution- data can be mapped in several stages. With errored coords
+revisited.
+*/
 
 export default function GreaterLondon() {
-  const svgStyles: Style = {
-		canvas: {
-			fillColor: "#333333"
-		},
-    borough: {
+  const svgStyles: CanvasStyles = {
+    canvas: {
       fillColor: '#333333',
+    },
+    borough: {
+      fillColor: '#33333300',
       strokeColor: '#aaaaaa',
       strokeWidth: '0.3',
       strokeLinecap: 'round',
       strokeLinejoin: 'round',
       strokeMiterlimit: '10',
     },
-		greaterLondon: {
-			strokeColor: 'white',
-			strokeWidth: "4",
-		},
-		water: {
-			fillColor: 'white',
-			strokeColor: 'white',
-			strokeWidth: '0.3'
-		}
+    greaterLondon: {
+      strokeColor: 'white',
+      strokeWidth: '4',
+    },
+    water: {
+      fillColor: 'white',
+      strokeColor: 'white',
+      strokeWidth: '0.3',
+    },
   };
+
+  const [cellsState, setCellsState] = useState<Cell[]>([]);
+
+  // Initialise cells one time
+  useEffect(() => {
+    console.log('Initialise cells');
+  }, []);
 
   return (
     <svg
@@ -53,13 +45,34 @@ export default function GreaterLondon() {
       x="0px"
       y="0px"
       width="1425px"
-      height="1140px"
-      viewBox="0 0 1425 1140"
-      enableBackground="new 0 0 1425 1140"
+      height="1085px"
+      viewBox="0 0 1340 1085"
+      enableBackground="new 0 0 1340 1140"
       xmlSpace="preserve"
     >
       <g>
-        <rect id="Back" x="0" y="0" fill={svgStyles.canvas.fillColor} width="1425" height="1140" />
+        <rect
+          id="Back"
+          x="0"
+          y="0"
+          fill={svgStyles.canvas.fillColor}
+          width="1425"
+          height="1140"
+        />
+        {cellsState &&
+          cellsState.map((cell) => {
+            return (
+              <rect
+                id="Cell"
+                x={cell.pxCoord[1]}
+                y={cell.pxCoord[0]}
+                fill="#555555"
+                width="55"
+                height="55"
+              />
+            );
+          })}
+
         <g id="Boroughs" transform="matrix(1,0,0,1.6,0,-62.661196)">
           <path
             id="City_of_London"
@@ -3709,7 +3722,7 @@ export default function GreaterLondon() {
           fill="none"
           stroke={svgStyles.borough.strokeColor}
           strokeWidth={svgStyles.borough.strokeWidth}
-					strokeLinecap={svgStyles.borough.strokeLinecap}
+          strokeLinecap={svgStyles.borough.strokeLinecap}
           strokeLinejoin={svgStyles.borough.strokeLinejoin}
           d="
 			M753.822,356.576v0.24v0.24v0.24l-0.239,0.24h-0.24h-0.72h-0.48h-0.24l-0.239,0.24h-0.24h-0.479h-0.24l-0.96,0.24h-0.24v-0.24
@@ -6210,7 +6223,7 @@ export default function GreaterLondon() {
           fill="none"
           stroke={svgStyles.greaterLondon.strokeColor}
           strokeWidth={svgStyles.greaterLondon.strokeWidth}
-					strokeLinecap={svgStyles.borough.strokeLinecap}
+          strokeLinecap={svgStyles.borough.strokeLinecap}
           strokeLinejoin={svgStyles.borough.strokeLinejoin}
           d="
 			M104.163,221.96h-0.48h-0.24h-0.239h-0.24l-0.24-0.24h-0.479l-0.24-0.24h-0.24h-0.24h-0.239h-0.24h-0.24h-0.24l-0.479,0.24h-0.24
