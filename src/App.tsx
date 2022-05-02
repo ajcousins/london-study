@@ -5,9 +5,8 @@ import GreaterLondon from './svg/GreaterLondon';
 
 function App() {
   return (
-    <div>
+    <div className="canvas-container">
       <GreaterLondon />
-      <Sandbox1 />
     </div>
   );
 }
