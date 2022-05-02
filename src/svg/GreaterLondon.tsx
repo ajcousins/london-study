@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import home_55 from '../data/home_55.json';
+import { valToColorHex } from '../helpers'
+import { yellowPurpBlue } from '../gradients';
 
-/*
-- Build data before in json array using backend (non-react) script so that it's is ready
-to be rendered by react and state doesn't have to be updated asyncronously.
-- Keeps api key secret.
-- Enables higher resolution- data can be mapped in several stages. With errored coords
-revisited.
-*/
+
+const MAX_TIME = 120;
 
 export default function GreaterLondon() {
+
   const svgStyles: CanvasStyles = {
     canvas: {
       fillColor: '#333333',
@@ -37,6 +36,7 @@ export default function GreaterLondon() {
   // Initialise cells one time
   useEffect(() => {
     console.log('Initialise cells');
+		setCellsState([...home_55])
   }, []);
 
   return (
@@ -66,7 +66,7 @@ export default function GreaterLondon() {
                 id="Cell"
                 x={cell.pxCoord[1]}
                 y={cell.pxCoord[0]}
-                fill="#555555"
+                fill={valToColorHex(cell.journeyTime, MAX_TIME, yellowPurpBlue)}
                 width="55"
                 height="55"
               />

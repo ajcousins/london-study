@@ -1,9 +1,9 @@
 import fs from 'fs';
 
 const initCells = () => {
-  const SQUARE_DIM = 55.2904;
-  const SQUARES_PER_ROW = 25;
-  const SQUARES_PER_COL = 20;
+  const SQUARE_DIM = 55.2904; // pixels
+  const SQUARES_PER_ROW = 25; // no.
+  const SQUARES_PER_COL = 20; // no.
   const ORIGIN_LATLNG = [51.71968, -0.57052]; // Top left of canvas (y / x)
   const SQUARE_DIM_LATLNG = [0.022944028, 0.036585772]; // HEIGHT / WIDTH
 
