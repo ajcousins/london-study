@@ -3,7 +3,7 @@ import home_55 from '../data/home_55.json';
 import { valToColorHex } from '../helpers'
 import { yellowPurpBlue } from '../gradients';
 
-
+const PIXEL_SIZE = 25;
 const MAX_TIME = 120;
 
 export default function GreaterLondon() {
@@ -67,8 +67,8 @@ export default function GreaterLondon() {
                 x={cell.pxCoord[1]}
                 y={cell.pxCoord[0]}
                 fill={valToColorHex(cell.journeyTime, MAX_TIME, yellowPurpBlue)}
-                width="55"
-                height="55"
+                width={`${PIXEL_SIZE}`}
+                height={`${PIXEL_SIZE}`}
               />
             );
           })}
