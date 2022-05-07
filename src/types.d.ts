@@ -28,7 +28,7 @@ interface CanvasStyles {
 }
 
 interface HexOptions {
-  journeyTime: number,
-  colourRanges: number[],
-  colourPalette: string[]
+  journeyTime: number;
+  colourRanges: number[];
+  colourPalette: string[];
 }

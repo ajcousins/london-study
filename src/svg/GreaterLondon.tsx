@@ -2,33 +2,37 @@ import React, { useEffect, useState } from 'react';
 // import home_55 from '../data/home_55.json';
 // import work_25 from '../data/work_25.json';
 import work_25 from '../data/coords.json';
-import { valToColorHex, valToColorHexDefined } from '../helpers'
+import { valToColorHex, valToColorHexDefined } from '../helpers';
 import { yellowPurpBlue, yellowPurpBlueWide } from '../gradients';
 
 const PIXEL_SIZE = 25;
 const MAX_TIME = 120;
 
-export default function GreaterLondon() {
+interface IProps {
+	colours: string[];
+	scale: number[];
+}
 
+export default function GreaterLondon({colours, scale}:IProps) {
   const svgStyles: CanvasStyles = {
     canvas: {
       fillColor: '#000000',
     },
     borough: {
-      fillColor: '#000000ff',
-      strokeColor: '#0eeaff',
-      strokeWidth: '0.3',
+      fillColor: '#00000000',
+      strokeColor: '#0940e6',
+      strokeWidth: '0.2',
       strokeLinecap: 'round',
       strokeLinejoin: 'round',
       strokeMiterlimit: '10',
     },
     greaterLondon: {
-      strokeColor: '#0eeaff',
+      strokeColor: '#0940e6',
       strokeWidth: '4',
     },
     water: {
-      fillColor: '#0eeaff',
-      strokeColor: '#0eeaff',
+      fillColor: '#0940e6',
+      strokeColor: '#0940e6',
       strokeWidth: '0.3',
     },
   };
@@ -38,27 +42,23 @@ export default function GreaterLondon() {
   // Initialise cells one time
   useEffect(() => {
     console.log('Initialise cells');
-		setCellsState([...work_25])
+    setCellsState([...work_25]);
   }, []);
 
-	const rangeDefinitions = [
-		15, 30, 45, 60, 75, 90, 105, 120
-	]
-
-	
-
-	
+  
 
   return (
     <svg
       version="1.1"
       x="0px"
       y="0px"
-      width="1425px"
-      height="1085px"
+      // width="1425px"
+      width="100%"
+      // height="1085px"
+      height="100%"
       viewBox="0 0 1340 1085"
       enableBackground="new 0 0 1340 1140"
-      xmlSpace="preserve"
+      // xmlSpace="preserve"
     >
       <g>
         <rect
@@ -77,11 +77,11 @@ export default function GreaterLondon() {
                 x={cell.pxCoord[1]}
                 y={cell.pxCoord[0]}
                 // fill={valToColorHex(cell.journeyTime, MAX_TIME, yellowPurpBlueWide)}
-								fill={valToColorHexDefined({
-									journeyTime: cell.journeyTime,
-									colourRanges: rangeDefinitions,
-									colourPalette: yellowPurpBlueWide
-								})}
+                fill={valToColorHexDefined({
+                  journeyTime: cell.journeyTime,
+                  colourRanges: scale,
+                  colourPalette: colours,
+                })}
                 width={`${PIXEL_SIZE}`}
                 height={`${PIXEL_SIZE}`}
               />
