@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import home_55 from '../data/home_55.json';
-import { valToColorHex } from '../helpers'
-import { yellowPurpBlue } from '../gradients';
+// import home_55 from '../data/home_55.json';
+// import work_25 from '../data/work_25.json';
+import work_25 from '../data/coords.json';
+import { valToColorHex, valToColorHexDefined } from '../helpers'
+import { yellowPurpBlue, yellowPurpBlueWide } from '../gradients';
 
 const PIXEL_SIZE = 25;
 const MAX_TIME = 120;
@@ -10,23 +12,23 @@ export default function GreaterLondon() {
 
   const svgStyles: CanvasStyles = {
     canvas: {
-      fillColor: '#333333',
+      fillColor: '#000000',
     },
     borough: {
-      fillColor: '#33333300',
-      strokeColor: '#aaaaaa',
+      fillColor: '#000000ff',
+      strokeColor: '#0eeaff',
       strokeWidth: '0.3',
       strokeLinecap: 'round',
       strokeLinejoin: 'round',
       strokeMiterlimit: '10',
     },
     greaterLondon: {
-      strokeColor: 'white',
+      strokeColor: '#0eeaff',
       strokeWidth: '4',
     },
     water: {
-      fillColor: 'white',
-      strokeColor: 'white',
+      fillColor: '#0eeaff',
+      strokeColor: '#0eeaff',
       strokeWidth: '0.3',
     },
   };
@@ -36,8 +38,16 @@ export default function GreaterLondon() {
   // Initialise cells one time
   useEffect(() => {
     console.log('Initialise cells');
-		setCellsState([...home_55])
+		setCellsState([...work_25])
   }, []);
+
+	const rangeDefinitions = [
+		15, 30, 45, 60, 75, 90, 105, 120
+	]
+
+	
+
+	
 
   return (
     <svg
@@ -66,7 +76,12 @@ export default function GreaterLondon() {
                 id="Cell"
                 x={cell.pxCoord[1]}
                 y={cell.pxCoord[0]}
-                fill={valToColorHex(cell.journeyTime, MAX_TIME, yellowPurpBlue)}
+                // fill={valToColorHex(cell.journeyTime, MAX_TIME, yellowPurpBlueWide)}
+								fill={valToColorHexDefined({
+									journeyTime: cell.journeyTime,
+									colourRanges: rangeDefinitions,
+									colourPalette: yellowPurpBlueWide
+								})}
                 width={`${PIXEL_SIZE}`}
                 height={`${PIXEL_SIZE}`}
               />

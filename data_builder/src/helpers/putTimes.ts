@@ -4,28 +4,20 @@ import getJourneyTime from './getJourneyTime';
 import fs from 'fs';
 dotenv.config();
 
-const putTimes = async (cellArray: Cell[], target: string, limit: number) => {
+const putTimes = async (cellArray: Cell[], target: string, limit: number):Promise<Cell[]> => {
   let count = limit;
   const batch = [];
 
   for (let i = 0; i < cellArray.length; i++) {
     if (count === 0) break;
-    if (cellArray[i].journeyTime > 9999 && cellArray[i].journeyTime < 10004) {
-      // if there have been 3 attempts
+    if (cellArray[i].journeyTime > 9999 && cellArray[i].journeyTime < 10001) {
       batch.push(cellArray[i]);
       count--;
     }
   }
 
-  console.log('batch:', batch);
-
-  if (batch.length) {
     const result = await updateCells(batch, target);
-    console.log('result:', result);
-    if (result) {
-      updateJsonArr(cellArray, result);
-    }
-  }
+    return result;
 };
 
 const updateCells = async (
@@ -49,12 +41,12 @@ const updateCells = async (
   );
 };
 
-const updateJsonArr = (cellArray: Cell[], result: Cell[]) => {
+export const updateJsonArr = (cellArray: Cell[], result: Cell[]):Cell[] => {
   const cells = [...cellArray];
 
   if (!result.length) {
     console.log('No cells were updated');
-    return;
+    return cells;
   }
 
   // For each cell result, replace updated cell back into main array.
@@ -71,6 +63,7 @@ const updateJsonArr = (cellArray: Cell[], result: Cell[]) => {
   });
   const newCells = JSON.stringify(cells, null, 2);
   fs.writeFileSync('./output/coords.json', newCells);
+  return cells;
 };
 
 export default putTimes;

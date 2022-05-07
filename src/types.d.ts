@@ -26,3 +26,9 @@ interface CanvasStyles {
     strokeWidth: string;
   };
 }
+
+interface HexOptions {
+  journeyTime: number,
+  colourRanges: number[],
+  colourPalette: string[]
+}

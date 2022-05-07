@@ -15,7 +15,7 @@ const getJourneyTime = async (cellCoords: string, target: string) => {
       (prev: number, cur: any) => (cur.duration < prev ? cur.duration : prev),
       Infinity
     );
-  } catch {
+  } catch(err) {
     return null;
   }
 };
