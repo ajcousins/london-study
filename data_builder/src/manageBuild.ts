@@ -5,7 +5,7 @@ import cliProgress from 'cli-progress';
 import { checkCompletedCells } from './helpers/checkCompletedCells';
 import { updateJsonArr } from './helpers/putTimes';
 
-const TARGET = 'wc2e7aw';
+const TARGET = 'e145aj';
 
 const manageBuild = async () => {
   let jsonData = [

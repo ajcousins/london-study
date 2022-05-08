@@ -2,56 +2,45 @@ import React from 'react';
 import './App.scss';
 import GreaterLondon from './svg/GreaterLondon';
 import { yellowPurpBlueWide } from './gradients';
+import Scale from './components/Scale';
+import Footer from './components/Footer';
 
 const scaleDefinition = [15, 30, 45, 60, 75, 90, 105, 120];
+
+const dataOptions = ['Covent Garden', 'Canary Wharf'];
+
 interface IProps {
-  colours: string[];
-  scale: number[];
+  title: string;
+  options: string[];
 }
 
-const Scale = ({ colours, scale }: IProps) => {
+const Option = ({optionName}: any) => {
   return (
-    <div className="scale__wrapper">
-      Scale (minutes)
-      <div className="scale">
-        {colours.map((colour, i) => {
-          return (
-            <Cell
-              colourHex={colour}
-              label={scale[i]}
-              isLast={i === colour.length}
-            />
-          );
-        })}
-      </div>
+    <div className="option-tile">
+      <input type="radio" id="age1" name="age" value="30" />
+      <label className="option-tile__label" htmlFor="age1">{optionName}</label>
+      <br></br>
     </div>
   );
 };
 
-const Cell = ({ colourHex, label, isLast }: any) => {
+const DataOptions = ({ title, options }: IProps) => {
   return (
-    <div className="scale__cell">
-      <div
-        className="scale__cell__swatch"
-        style={{ backgroundColor: colourHex }}
-      />
-      <div className="scale__cell__label">
-        {label}
-        {isLast && '+'}
-      </div>
+    <div className="section-wrapper">
+      <div>{title}</div>
+      {options.map(option => {
+        return <Option optionName={option}/>
+      })}
+
     </div>
   );
-};
-
-const Footer = () => {
-  return <div className="footer"></div>;
 };
 
 function App() {
   return (
     <>
       <div className="page">
-        <h1 className="page-header">Greater London Journey Times</h1>
+        <h1>Greater London Journey Times</h1>
         <h1 className="sub-heading">
           A study using the TfL API.&nbsp;
           <a
@@ -63,15 +52,14 @@ function App() {
           </a>
         </h1>
 
-        <h2 className="section-header">
-          1.0 Journey Times from Central London
-        </h2>
+        <h2>1.0 Journey Times from Central London</h2>
         <h2 className="sub-heading">
           April 2022 - Weekday at 14:00 to Covent Garden - Before Elizabeth Line
           opening
         </h2>
         <GreaterLondon colours={yellowPurpBlueWide} scale={scaleDefinition} />
         <Scale colours={yellowPurpBlueWide} scale={scaleDefinition} />
+        <DataOptions title={'Origin'} options={dataOptions} />
       </div>
       <Footer />
     </>

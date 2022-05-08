@@ -12,10 +12,9 @@
 }
 
 h1 {
-  &.page-header {
-    font-size: 2.5rem;
-    margin-top: 2em;
-  }
+  font-size: 2.5rem;
+  margin-top: 2em;
+
   &.sub-heading {
     font-weight: 300;
     font-style: italic;
@@ -24,9 +23,8 @@ h1 {
 }
 
 h2 {
-  &.section-header {
-    margin-top: 2em;
-  }
+  margin-top: 2em;
+  
   &.sub-heading {
     font-weight: 300;
     font-style: italic;
@@ -35,13 +33,13 @@ h2 {
   }
 }
 
+.section-wrapper {
+  margin-top: 1em;
+}
+
 .scale {
   display: flex;
   margin-top: 0.5em;
-  // background-color: red;
-  &__wrapper {
-    margin-top: 1em;
-  }
   &__cell {
     display: flex;
     flex-direction: column;
@@ -60,8 +58,16 @@ h2 {
   }
 }
 
+.option-tile {
+  margin-top: 0.8em;
+  &__label {
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+      font-size: 0.8rem;
+  }
+}
+
 .footer {
-  // background-color: #00000010;
   height: 20em;
   width: 100%;
   margin-top: 5em;

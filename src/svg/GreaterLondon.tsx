@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 // import home_55 from '../data/home_55.json';
 // import work_25 from '../data/work_25.json';
-import work_25 from '../data/coords.json';
+// import coventGarden from '../data/covent-garden_25.json';
+import coventGarden from '../data/canary-wharf_25.json';
 import { valToColorHex, valToColorHexDefined } from '../helpers';
 import { yellowPurpBlue, yellowPurpBlueWide } from '../gradients';
 
@@ -42,7 +43,7 @@ export default function GreaterLondon({colours, scale}:IProps) {
   // Initialise cells one time
   useEffect(() => {
     console.log('Initialise cells');
-    setCellsState([...work_25]);
+    setCellsState([...coventGarden]);
   }, []);
 
   
