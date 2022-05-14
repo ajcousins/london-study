@@ -5,9 +5,6 @@ interface Cell {
 }
 
 interface CanvasStyles {
-  canvas: {
-    fillColor: string;
-  };
   borough: {
     fillColor: string;
     strokeColor: string;

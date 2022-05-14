@@ -13,6 +13,7 @@ export const Scale = ({ colours, scale }: IProps) => {
         {colours.map((colour, i) => {
           return (
             <Cell
+              key={i}
               colourHex={colour}
               label={scale[i]}
               isLast={i === colour.length}

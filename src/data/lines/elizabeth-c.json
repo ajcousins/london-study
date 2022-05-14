@@ -1,0 +1,64 @@
+{
+  "info": {
+    "lineName": "Elizabeth Line",
+    "hexColor": "#9364CD"
+  },
+  "stops": [
+    {
+      "name": "Liverpool Street",
+      "centerLatLng": [51.5187516, -0.0836261]
+    },
+    {
+      "name": "Stratford",
+      "centerLatLng": [51.5413847,-0.0033553]
+    },
+    {
+      "name": "Maryland",
+      "centerLatLng": [51.5483387,0.0053537]
+    },
+    {
+      "name": "Forest Gate",
+      "centerLatLng": [51.5489593,0.0247569]
+    },
+    {
+      "name": "Manor Park",
+      "centerLatLng": [51.552082,0.0465254]
+    },
+    {
+      "name": "Ilford",
+      "centerLatLng": [51.5589869,0.0698176]
+    },
+    {
+      "name": "Seven Kings",
+      "centerLatLng": [51.5639771,0.0971169]
+    },
+    {
+      "name": "Goodmayes",
+      "centerLatLng": [51.565678,0.1113945]
+    },
+    {
+      "name": "Chadwell Heath",
+      "centerLatLng": [51.5680996,0.1293224]
+    },
+    {
+      "name": "Romford",
+      "centerLatLng": [51.5746319,0.1830962]
+    },
+    {
+      "name": "Gidea Park",
+      "centerLatLng": [51.5814851,0.2052981]
+    },
+    {
+      "name": "Harold Wood",
+      "centerLatLng": [51.5927966,0.2330534]
+    },
+    {
+      "name": "Brentwood",
+      "centerLatLng": [51.6135917,0.2998061]
+    },
+    {
+      "name": "Shenfield",
+      "centerLatLng": [51.6309354,0.3295717]
+    }
+  ]
+}

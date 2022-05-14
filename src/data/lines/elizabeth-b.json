@@ -1,0 +1,20 @@
+{
+  "info": {
+    "lineName": "Elizabeth Line",
+    "hexColor": "#9364CD"
+  },
+  "stops": [
+    {
+      "name": "Hayes & Harlington",
+      "centerLatLng": [51.5030493, -0.42286]
+    },
+    {
+      "name": "Heathrow Terminals 2 & 3",
+      "centerLatLng": [51.4713227,-0.4523172]
+    },
+    {
+      "name": "Heathrow Terminal 5",
+      "centerLatLng": [51.4725212,-0.489066]
+    }
+  ]
+}

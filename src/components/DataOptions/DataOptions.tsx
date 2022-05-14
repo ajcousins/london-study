@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from 'react';
 
 interface IProps {
   title: string;
@@ -8,22 +7,19 @@ interface IProps {
   state: any;
 }
 
-
 const Option = ({ group, optionName, selected, state, options }: any) => {
-
-  const dataOptions  = options
-  const setJourneyData  = state.setJourneyData;
+  const dataOptions = options;
+  const setJourneyData = state.setJourneyData;
 
   const handleOptionChange = (event: any) => {
     const selected = event.target.value;
-    console.log("selected:", selected);
-    
-    const idx = dataOptions.findIndex((option:any) => {
+    console.log('selected:', selected);
+
+    const idx = dataOptions.findIndex((option: any) => {
       return option.name === selected;
     });
     if (idx === -1) return;
     setJourneyData(dataOptions[idx]);
-
   };
 
   return (
@@ -47,6 +43,7 @@ const DataOptions = ({ title, options, selected, state }: IProps) => {
       {options.map((option) => {
         return (
           <Option
+            key={option.name}
             group={title}
             optionName={option.name}
             selected={selected}

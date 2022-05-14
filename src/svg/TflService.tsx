@@ -1,8 +1,4 @@
-import {
-  valToColorHex,
-  valToColorHexDefined,
-  latlngToPixelCoord,
-} from '../helpers';
+import { latlngToPixelCoord } from '../helpers';
 
 interface LProps {
   line: {
@@ -12,9 +8,12 @@ interface LProps {
       centerLatLng: number[];
     }[];
   };
+  hoverState: any;
 }
 
-const TflService = ({ line }: LProps) => {
+const TflService = ({ line, hoverState }: LProps) => {
+  const { hoverInfo, setHoverInfo } = hoverState;
+
   const stationArr = [...line.stops];
   if (
     stationArr[0].centerLatLng[1] >
@@ -51,6 +50,24 @@ const TflService = ({ line }: LProps) => {
     return pathString;
   };
 
+  const handleMouseEnter = (event: any) => {
+    setHoverInfo({
+      isHovered: true,
+      text: event.target.id,
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setHoverInfo({
+      isHovered: false,
+      text: '',
+      x: 0,
+      y: 0,
+    });
+  };
+
   return (
     <>
       <g>
@@ -62,16 +79,28 @@ const TflService = ({ line }: LProps) => {
         />
         {line.stops.map((node) => {
           return (
-            <circle
-              cx={latlngToPixelCoord(node.centerLatLng[1], 'x')}
-              cy={latlngToPixelCoord(node.centerLatLng[0], 'y')}
-              // r="7"
-              // fill={line.info.hexColor}
-              r="6"
-              fill="white"
-              stroke="black"
-              strokeWidth="3"
-            />
+            <g key={`${node.centerLatLng}`}>
+              <circle
+                cx={latlngToPixelCoord(node.centerLatLng[1], 'x')}
+                cy={latlngToPixelCoord(node.centerLatLng[0], 'y')}
+                // r="7"
+                // fill={line.info.hexColor}
+                r="6"
+                fill="white"
+                stroke="black"
+                strokeWidth="3"
+              />
+              <circle
+                className="hover"
+                cx={latlngToPixelCoord(node.centerLatLng[1], 'x')}
+                cy={latlngToPixelCoord(node.centerLatLng[0], 'y')}
+                r="15"
+                fill="transparent"
+                id={node.name}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              />
+            </g>
           );
         })}
       </g>
