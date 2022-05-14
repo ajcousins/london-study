@@ -32,3 +32,9 @@ interface HexOptions {
   colourRanges: number[];
   colourPalette: string[];
 }
+
+interface JourneyData {
+  pxCoord: number[];
+  centerLatLng: number[];
+  journeyTime: number;
+}

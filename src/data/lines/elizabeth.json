@@ -1,0 +1,108 @@
+{
+  "info": {
+    "lineName": "Elizabeth Line",
+    "hexColor": "#9364CD"
+  },
+  "stops": [
+    {
+      "name": "Abbey Wood",
+      "centerLatLng": [51.491236, 0.1189991]
+    },
+    {
+      "name": "Woolwich",
+      "centerLatLng": [51.4919937, 0.0682474]
+    },
+    {
+      "name": "Custom House",
+      "centerLatLng": [51.5098551, 0.0238622]
+    },
+    {
+      "name": "Canary Wharf",
+      "centerLatLng": [51.5034386, -0.0199086]
+    },
+    {
+      "name": "Whitechapel",
+      "centerLatLng": [51.5194973, -0.0633905]
+    },
+    {
+      "name": "Liverpool Street",
+      "centerLatLng": [51.5187516, -0.0836261]
+    },
+    {
+      "name": "Farringdon",
+      "centerLatLng": [51.5202317, -0.1067454]
+    },
+    {
+      "name": "Tottenham Court Road",
+      "centerLatLng": [51.5162122, -0.1328165]
+    },
+    {
+      "name": "Bond Street",
+      "centerLatLng": [51.5142112, -0.1507238]
+    },
+    {
+      "name": "Paddington",
+      "centerLatLng": [51.5166777, -0.1791215]
+    },
+    {
+      "name": "Acton Main Line",
+      "centerLatLng": [51.517673, -0.2683682]
+    },
+    {
+      "name": "Ealing Broadway",
+      "centerLatLng": [51.5149175, -0.3040733]
+    },
+    {
+      "name": "West Ealing",
+      "centerLatLng": [51.5136816, -0.3231645]
+    },
+    {
+      "name": "Hanwell",
+      "centerLatLng": [51.5118928, -0.3407522]
+    },
+    {
+      "name": "Southall",
+      "centerLatLng": [51.5062865, -0.3796286]
+    },
+    {
+      "name": "Hayes & Harlington",
+      "centerLatLng": [51.5030493, -0.42286]
+    },
+    {
+      "name": "West Drayton",
+      "centerLatLng": [51.5098834, -0.4747282]
+    },
+    {
+      "name": "Iver",
+      "centerLatLng": [51.5084535, -0.508569]
+    },
+    {
+      "name": "Langley",
+      "centerLatLng": [51.5071123, -0.5452037]
+    },
+    {
+      "name": "Slough",
+      "centerLatLng": [51.5105726, -0.5925584]
+    },
+    {
+      "name": "Burnham",
+      "centerLatLng": [51.5239253, -0.6478407]
+    },
+    {
+      "name": "Taplow",
+      "centerLatLng": [51.5235453, -0.6836092]
+    },
+    {
+      "name": "Maidenhead",
+      "centerLatLng": [51.5175436, -0.7278766]
+    },
+    {
+      "name": "Twyford",
+      "centerLatLng": [51.475487, -0.8655983]
+    },
+    {
+      "name": "Reading",
+      "centerLatLng": [51.4583674, -0.9261613]
+    }
+  ]
+}

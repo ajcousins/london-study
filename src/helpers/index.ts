@@ -22,3 +22,16 @@ export const valToColorHexDefined = (hexOptions:HexOptions):string => {
 
   return hexOptions.colourPalette[idx];
 }
+
+export const latlngToPixelCoord = (latlng: number, axis: string): number => {
+  const originY = 51.71968;
+  const originX = -0.57052;
+  const factorY = 2409.795;
+  const factorX = 1511.254;
+
+  if (axis === 'x') {
+    return Math.round((latlng - originX) * factorX * 100) / 100;
+  } else if (axis === 'y') {
+    return Math.round((originY - latlng) * factorY * 100) / 100;
+  } else return 0;
+};

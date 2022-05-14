@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
-// import home_55 from '../data/home_55.json';
-// import work_25 from '../data/work_25.json';
-// import coventGarden from '../data/covent-garden_25.json';
-import coventGarden from '../data/canary-wharf_25.json';
-import { valToColorHex, valToColorHexDefined } from '../helpers';
-import { yellowPurpBlue, yellowPurpBlueWide } from '../gradients';
+import elizabethLine from '../data/lines/elizabeth.json';
+import {
+  valToColorHexDefined,
+} from '../helpers';
+import TflService from './TflService';
 
 const PIXEL_SIZE = 25;
-const MAX_TIME = 120;
 
 interface IProps {
-	colours: string[];
-	scale: number[];
+  colours: string[];
+  scale: number[];
+	journeyData: any;
 }
 
-export default function GreaterLondon({colours, scale}:IProps) {
+export default function GreaterLondon({ colours, scale, journeyData }: IProps) {
   const svgStyles: CanvasStyles = {
     canvas: {
       fillColor: '#000000',
@@ -42,11 +41,9 @@ export default function GreaterLondon({colours, scale}:IProps) {
 
   // Initialise cells one time
   useEffect(() => {
-    console.log('Initialise cells');
-    setCellsState([...coventGarden]);
-  }, []);
-
-  
+		if (!journeyData) return
+		else setCellsState([...journeyData.jsonData]);
+  }, [journeyData]);
 
   return (
     <svg
@@ -54,8 +51,8 @@ export default function GreaterLondon({colours, scale}:IProps) {
       x="0px"
       y="0px"
       // width="1425px"
-      width="100%"
       // height="1085px"
+      width="100%"
       height="100%"
       viewBox="0 0 1340 1085"
       enableBackground="new 0 0 1340 1140"
@@ -6841,6 +6838,7 @@ export default function GreaterLondon({colours, scale}:IProps) {
 			l-0.239-0.24L402.47,166.051z"
         />
       </g>
+      <TflService line={elizabethLine} />
     </svg>
   );
 }

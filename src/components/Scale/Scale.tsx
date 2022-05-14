@@ -8,7 +8,7 @@ interface IProps {
 export const Scale = ({ colours, scale }: IProps) => {
   return (
     <div className="section-wrapper">
-      Scale (minutes)
+      Minutes
       <div className="scale">
         {colours.map((colour, i) => {
           return (
