@@ -1,0 +1,47 @@
+{
+  "info": {
+    "lineName": "Elizabeth Line",
+    "hexColor": "#9364CD"
+  },
+  "stops": [
+    {
+      "name": "Abbey Wood",
+      "centerLatLng": [51.30, 0.12]
+    },
+
+    {
+      "name": "Custom House",
+      "centerLatLng": [51.40, 0.02]
+    },
+
+    {
+      "name": "Whitechapel",
+      "centerLatLng": [51.52, -0.06]
+    },
+
+    {
+      "name": "Farringdon",
+      "centerLatLng": [51.45, -0.11]
+    },
+
+
+ 
+    {
+      "name": "Acton Main Line",
+      "centerLatLng": [51.52, -0.27]
+    },
+
+
+    {
+      "name": "Southall",
+      "centerLatLng": [51.6, -0.38]
+    },
+
+
+
+    {
+      "name": "Langley",
+      "centerLatLng": [51.51, -0.55]
+    }
+  ]
+}
