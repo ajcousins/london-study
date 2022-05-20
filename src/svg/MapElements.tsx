@@ -1,5 +1,3 @@
-import React from 'react';
-
 const svgStyles: CanvasStyles = {
   borough: {
     fillColor: '#00000000',
@@ -21,47 +19,52 @@ const svgStyles: CanvasStyles = {
 };
 
 export default function MapElements() {
+
+  const Borough = ({ id, d }: any) => {
+
+    return (
+      <path
+        fill="#ffffff00"
+        id={id}
+        stroke={svgStyles.borough.strokeColor}
+				strokeWidth={svgStyles.borough.strokeWidth}
+        strokeLinecap={svgStyles.borough.strokeLinecap}
+        strokeLinejoin={svgStyles.borough.strokeLinejoin}
+        strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
+        d={d}
+      />
+    );
+  };
+
   return (
     <>
       <g id="Boroughs" transform="matrix(1,0,0,1.6,0,-62.661196)">
-        <path
+        <Borough
           id="City_of_London"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
-				M753.822,356.576v0.24v0.24v0.24l-0.239,0.24h-0.24h-0.72h-0.48h-0.24l-0.239,0.24h-0.24h-0.479h-0.24l-0.96,0.24h-0.24v-0.24
-				h-0.24v-0.24h-0.479v-0.48h-0.24v-0.24h-0.48h-0.479v0.24v0.24h-0.24h-0.72l-0.48,0.24h-0.239l-0.24,0.24l-0.479,0.48v0.24
-				h-0.721v0.48h-0.24v0.24h0.48v0.24l-0.24,0.24l-0.24,0.48v0.24l-0.239,0.48h-0.24v0.24h-0.24l-0.239,0.24l-0.721,0.96h-0.24
-				h-0.72l-0.239-0.24h-0.48l-0.96-0.24h-1.2l-1.199-0.24h-0.721l-0.24-0.24l-1.199-0.24h-0.24h-0.96h-0.479l-0.961-0.24h-1.439
-				h-0.24h-0.479l-0.72-0.24h-0.48h-0.24h-0.72l-1.2-0.24h-1.199l-1.2-0.24l-0.72-0.24h-0.48h-0.24l-0.479-0.24l-1.2-0.24
-				l-1.439-0.48h-0.48l-0.72-0.24h-0.48l-1.2-0.24h-1.439l-1.2-0.24h-1.2l-0.959-0.24h-0.24h-2.16h-2.64h-0.48h-0.72v0.24h-0.24
-				v0.72h0.24l-0.24,0.24v0.24v0.24v0.24v0.24h-0.72v-0.24v-0.24v-0.48v-0.24l0.24-0.48v-0.24h-0.24h0.24v-0.48h-0.96h-0.48h-1.439
-				h-0.721h-0.479h-0.96h-0.96h-0.96l-1.2,0.24h-0.72h-0.24h-0.72h-0.48l-0.239-1.44v-0.24v-0.72v-0.24v-0.24l-0.24-0.48h-0.24
-				l-0.479-0.48h0.239l-0.239-0.24l-0.24-0.48l0.24-0.24l-0.24-0.24l0.96-0.24l-0.24-0.24l-0.24-0.48h0.96l0.48-0.24l-0.48-1.44
-				l-0.239-0.48v-0.24l-0.48-0.72l-0.479-0.72l-0.96-1.2l-0.96-0.959l-0.48-0.48v-0.24v-0.24h1.2h0.96l1.2,0.24l1.68,0.24
-				l1.439,0.24h0.721h1.199l0.721,0.24l0.239-0.24h0.24l0.48-0.24l0.96-0.24l0.479-0.24h0.48l0.72-0.24l0.96-0.48l2.16-0.72
-				l1.92-0.48h0.24l0.479-0.24l0.72-0.24l0.48-0.24h0.479h0.24h0.24l0.72-0.24l0.48-0.24l0.72-0.24h0.72l1.2-0.24v-0.48v-0.48
-				l0.24-0.48h0.239v-0.24l-0.239-0.72l-0.24-0.24v-0.24l-0.24-0.24h-0.24v-0.24l1.681-0.72l0.239,0.24l0.24,0.72l0.72-0.24
-				l1.44-0.24l0.72,1.199l0.24,0.72l0.24,0.48h0.72l0.24-0.24v0.24h0.479v0.24l1.2-0.24l0.24,0.72h0.239h0.721h0.72l0.479,0.24h1.2
-				l0.72,0.24l-0.479,1.199h0.479l0.721,0.24l1.68,0.48l0.96,0.24l1.68,0.72h0.24l0.479-0.72l0.24-0.24l0.24-0.72l0.24-0.24
-				l0.239-0.48l2.88,0.96l0.96-0.48l0.721-0.48l0.479-0.24l0.24-0.24l0.479-0.48l0.24-0.72l0.48-0.72h0.479l1.44,0.48l1.92,0.24
-				l-0.48,0.72v0.48l-0.24,0.959l-0.239,0.96l-0.48,0.959l1.68-0.24h0.24l0.24,0.72h-0.24l0.24,0.24l0.24,0.24l0.239,0.24v0.24
-				l0.48,0.72l0.72,0.959v0.24l0.72,0.48l1.92,1.44l0.48,0.24l0.479,0.48l0.24,0.24l0.48,0.24l0.479,0.48l0.24,0.72l0.24,0.48
-				l0.239,0.72l0.24,0.96v0.72v0.24l0.24,0.24v0.48l0.24,0.24v0.24L753.822,356.576L753.822,356.576z"
+			M753.822,356.576v0.24v0.24v0.24l-0.239,0.24h-0.24h-0.72h-0.48h-0.24l-0.239,0.24h-0.24h-0.479h-0.24l-0.96,0.24h-0.24v-0.24
+			h-0.24v-0.24h-0.479v-0.48h-0.24v-0.24h-0.48h-0.479v0.24v0.24h-0.24h-0.72l-0.48,0.24h-0.239l-0.24,0.24l-0.479,0.48v0.24
+			h-0.721v0.48h-0.24v0.24h0.48v0.24l-0.24,0.24l-0.24,0.48v0.24l-0.239,0.48h-0.24v0.24h-0.24l-0.239,0.24l-0.721,0.96h-0.24
+			h-0.72l-0.239-0.24h-0.48l-0.96-0.24h-1.2l-1.199-0.24h-0.721l-0.24-0.24l-1.199-0.24h-0.24h-0.96h-0.479l-0.961-0.24h-1.439
+			h-0.24h-0.479l-0.72-0.24h-0.48h-0.24h-0.72l-1.2-0.24h-1.199l-1.2-0.24l-0.72-0.24h-0.48h-0.24l-0.479-0.24l-1.2-0.24
+			l-1.439-0.48h-0.48l-0.72-0.24h-0.48l-1.2-0.24h-1.439l-1.2-0.24h-1.2l-0.959-0.24h-0.24h-2.16h-2.64h-0.48h-0.72v0.24h-0.24
+			v0.72h0.24l-0.24,0.24v0.24v0.24v0.24v0.24h-0.72v-0.24v-0.24v-0.48v-0.24l0.24-0.48v-0.24h-0.24h0.24v-0.48h-0.96h-0.48h-1.439
+			h-0.721h-0.479h-0.96h-0.96h-0.96l-1.2,0.24h-0.72h-0.24h-0.72h-0.48l-0.239-1.44v-0.24v-0.72v-0.24v-0.24l-0.24-0.48h-0.24
+			l-0.479-0.48h0.239l-0.239-0.24l-0.24-0.48l0.24-0.24l-0.24-0.24l0.96-0.24l-0.24-0.24l-0.24-0.48h0.96l0.48-0.24l-0.48-1.44
+			l-0.239-0.48v-0.24l-0.48-0.72l-0.479-0.72l-0.96-1.2l-0.96-0.959l-0.48-0.48v-0.24v-0.24h1.2h0.96l1.2,0.24l1.68,0.24
+			l1.439,0.24h0.721h1.199l0.721,0.24l0.239-0.24h0.24l0.48-0.24l0.96-0.24l0.479-0.24h0.48l0.72-0.24l0.96-0.48l2.16-0.72
+			l1.92-0.48h0.24l0.479-0.24l0.72-0.24l0.48-0.24h0.479h0.24h0.24l0.72-0.24l0.48-0.24l0.72-0.24h0.72l1.2-0.24v-0.48v-0.48
+			l0.24-0.48h0.239v-0.24l-0.239-0.72l-0.24-0.24v-0.24l-0.24-0.24h-0.24v-0.24l1.681-0.72l0.239,0.24l0.24,0.72l0.72-0.24
+			l1.44-0.24l0.72,1.199l0.24,0.72l0.24,0.48h0.72l0.24-0.24v0.24h0.479v0.24l1.2-0.24l0.24,0.72h0.239h0.721h0.72l0.479,0.24h1.2
+			l0.72,0.24l-0.479,1.199h0.479l0.721,0.24l1.68,0.48l0.96,0.24l1.68,0.72h0.24l0.479-0.72l0.24-0.24l0.24-0.72l0.24-0.24
+			l0.239-0.48l2.88,0.96l0.96-0.48l0.721-0.48l0.479-0.24l0.24-0.24l0.479-0.48l0.24-0.72l0.48-0.72h0.479l1.44,0.48l1.92,0.24
+			l-0.48,0.72v0.48l-0.24,0.959l-0.239,0.96l-0.48,0.959l1.68-0.24h0.24l0.24,0.72h-0.24l0.24,0.24l0.24,0.24l0.239,0.24v0.24
+			l0.48,0.72l0.72,0.959v0.24l0.72,0.48l1.92,1.44l0.48,0.24l0.479,0.48l0.24,0.24l0.48,0.24l0.479,0.48l0.24,0.72l0.24,0.48
+			l0.239,0.72l0.24,0.96v0.72v0.24l0.24,0.24v0.48l0.24,0.24v0.24L753.822,356.576L753.822,356.576z"
         />
-
-        <path
+       
+        <Borough
           id="Barking_and_Dagenham"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M967.658,305.705v-0.24l1.199,0.24v0.24h0.48h0.24h0.239l0.96,0.24l0.721,0.24h0.239h0.24l0.72,0.24l0.24,0.24v-0.24l0.24-0.24
 				h0.479h0.72h0.24h0.24h0.24h0.24h0.239h0.48h0.72h0.24l0.72-0.24h0.96l0.48-0.24l0.479-0.24l0.72-0.24v-0.24h0.24l0.24,0.24
@@ -144,14 +147,8 @@ export default function MapElements() {
 				l0.24-0.48l0.24-0.24l0.479-0.72l0.48-0.72l0.239-0.48L967.658,305.705L967.658,305.705z"
         />
 
-        <path
+        <Borough
           id="Barnet"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M648.465,161.731l0.24,0.24l0.48,0.48l0.72,0.48l0.479,0.48l0.24,0.24l0.72,0.48l0.721,0.48l2.159,1.199l0.24,0.24h0.24
 				l0.72,0.48l2.16,0.959l1.2,0.48h0.239l0.96,0.48l0.24,0.24l0.24,0.24l0.24,0.24l-0.48,0.24l0.48,0.24h-0.48l0.24,0.24l0.479-0.24
@@ -253,14 +250,8 @@ export default function MapElements() {
 				l1.68,2.399l1.439,1.2l0.721,0.72l0.72,0.48L648.465,161.731L648.465,161.731z"
         />
 
-        <path
+        <Borough
           id="Bexley"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M1153.653,450.399l-3.36-0.48l-0.479,0.72h-1.2l-0.479,0.48v0.24v1.44v0.24l0.239,0.24l-0.72,0.48l-0.72,0.72l-1.2,0.72
 				l-0.96,0.72l-1.199,0.72h-0.24h-0.24l-0.48-0.24l-0.72,0.48h-0.239l-0.48,0.24h-0.24l-0.72,0.24h-0.96h-0.72v0.24v0.72h-0.24
@@ -352,14 +343,8 @@ export default function MapElements() {
 				l-0.24,0.24h-0.239l-1.2,2.88L1153.653,450.399z"
         />
 
-        <path
+        <Borough
           id="Brent"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M566.147,330.901h-0.48v-0.24v-0.24h-0.24h-0.239l-0.48,0.24h-0.479l-0.24-0.72l-0.24-0.48l0.24-0.24v-0.48v-0.72v-0.48v-0.24
 				v-0.24l-0.24-0.24l-0.24-0.24l-0.479-0.24l-0.24-0.24l-0.24-0.24h-0.239l-0.24-0.24h-0.24l-0.24-0.24h-0.479l-0.96-0.48h-0.24
@@ -437,14 +422,8 @@ export default function MapElements() {
 				l-1.2,1.2l-1.92,2.639l-1.2,1.2L566.147,330.901L566.147,330.901z"
         />
 
-        <path
+        <Borough
           id="Bromley"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M882.46,676.679l-0.24-0.48v-0.24l-0.24-0.24v-0.24l-0.239-0.24V675l-0.24-0.24v-0.48l-0.24-0.24v-0.48l-0.24-0.24v-0.24
 				l-0.24-0.72l0.24-0.24h-0.24l0.24-0.72h-0.24v-0.24h-0.239V670.2v-0.24v-0.24l-0.24-0.48l-0.24-0.24v-0.24v-0.24l-0.239-0.24
@@ -617,14 +596,8 @@ export default function MapElements() {
 				l-0.24-0.72l-0.24-0.72l-0.239-0.96l-0.24-0.48l-0.24-0.48L882.46,676.679z"
         />
 
-        <path
+        <Borough
           id="Camden"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M690.944,334.26l0.24,0.24l0.239,0.48l0.48,0.48v0.24h0.24l0.479,0.48l0.96,0.48l0.24,0.24h0.24l0.479,0.24l0.96,0.24l1.92,0.48
 				h0.24h0.24h0.239l0.24,0.24h0.24l0.24-0.24v0.24l0.479,0.24l0.24,0.48l0.24,0.48h0.239h1.92l0.48,0.72l0.24,0.24l0.239,0.24
@@ -674,14 +647,8 @@ export default function MapElements() {
 				l-0.721,0.48L690.944,334.26L690.944,334.26z"
         />
 
-        <path
+        <Borough
           id="Croydon"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M847.66,625.088h-0.239l0.239,0.24l0.24,0.48l-0.24,0.24h-1.68l-2.16,2.159h-0.239l-0.24,0.24v0.72v0.24l-0.48,0.24l-0.239,0.48
 				l-0.24,0.48v0.24l-0.24-0.24l-0.24-0.48l-0.239-0.24l-0.48-0.48l-0.24-0.48v-0.24l-0.479-0.48l-0.48-0.72l-0.479-0.24l-0.48-0.48
@@ -801,14 +768,8 @@ export default function MapElements() {
 				h-0.24H847.9l-0.24,0.24V625.088z"
         />
 
-        <path
+        <Borough
           id="Ealing"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M390.231,298.267l0.24,0.48v0.48l0.239,0.24l0.24,0.48l0.24,0.24l0.479,0.24l0.24,0.24l0.24,0.24h0.24l2.159,0.72h0.24l0.24,0.24
 				l1.2,0.48l0.72,0.48l0.72,0.48l0.72,0.48v0.24h0.24l-0.24,0.24h-1.199h-1.44v0.48h0.72l0.721,0.72v0.72l-0.24,0.48l-0.24,0.24
@@ -902,14 +863,8 @@ export default function MapElements() {
 				z"
         />
 
-        <path
+        <Borough
           id="Enfield"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M703.664,82.066h0.479h0.96h1.2h0.48l0.72,0.24l0.72,0.24h0.72l0.96,0.24h1.2l0.96,0.24l1.2,0.24h0.24l0.96,0.24h0.479h0.24
 				l1.439,0.48h0.721l0.239,0.24l0.24-0.24l0.96,0.24l0.96,0.24l0.72,0.24h0.721h1.92l1.439,0.24h0.96h0.48h1.439h0.96h0.72h0.96
@@ -980,14 +935,8 @@ export default function MapElements() {
 				l1.681-0.24h0.96h1.199h0.96H703.664L703.664,82.066z"
         />
 
-        <path
+        <Borough
           id="Greenwich"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M844.301,419.925l-0.48,0.24l-0.96,0.48l-0.72,0.24h-0.24l-0.479,0.48h-0.24l-0.24-0.24l-0.239-0.24h-0.24l-0.24-0.24l-0.24-0.24
 				l-0.479-0.48h-0.24v-0.24l-0.24-0.24l-0.479,0.24l-0.24-0.24h-0.24v-0.24h-0.479h-0.24h-0.24l-0.479-0.24h-0.48l-0.239-0.24
@@ -1076,14 +1025,8 @@ export default function MapElements() {
 				v0.24h-0.479l-0.48,0.24l0.48,0.48l0.72,1.2l0.479,0.96l0.24,0.48h0.24l0.479,0.48L844.301,419.925L844.301,419.925z"
         />
 
-        <path
+        <Borough
           id="Hackney"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M795.822,279.31h0.479h0.479h0.48h0.48l0.72,0.24l0.72,0.24h0.24h0.24h0.239h0.24h0.479h0.24l0.96-0.24l0.48-0.24h0.239h0.24
 				h0.24l0.24-0.24l0.24,0.24h0.239h0.24l0.479,0.48h0.24l0.24,0.24h0.24h0.24h0.479h0.479h0.24h0.48l0.479-0.24h0.24l0.24-0.24
@@ -1138,14 +1081,8 @@ export default function MapElements() {
 				l0.24,0.24h0.24h0.72l0.479,0.24l0.48,0.48L795.822,279.31L795.822,279.31z"
         />
 
-        <path
+        <Borough
           id="Hammersmith_and_Fulham"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M530.148,355.136l0.239,0.24l0.24,0.24v0.24l0.24,0.24v0.24l0.479,0.72v0.24l0.24,0.959h0.72l1.44-0.24l-0.24-0.72h0.48h0.239
 				h0.24l0.24-0.24h0.24l0.239,0.48v0.24v0.24l0.24,0.24v0.24l0.24,0.24h0.24v0.24h0.239h0.48h0.24l0.479,0.959l0.24,0.72l0.24,0.48
@@ -1196,14 +1133,8 @@ export default function MapElements() {
 				l0.24,0.72l0.48,0.48l0.479,0.72v0.24v0.24v0.24l0.48,0.48l0.96,1.44v0.24l0.24,0.24V355.136L530.148,355.136z"
         />
 
-        <path
+        <Borough
           id="Haringey"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M716.143,261.314h-0.24l0.48,0.959l0.96,1.44v0.24v0.48h0.24v0.24l0.239,0.48h0.24l0.24,0.24l0.24,0.24l-0.48,0.48l-3.6,2.64
 				l-0.48,0.48l-2.399,1.92l-1.2,0.72l-2.64,1.68l-1.681,0.96l-0.239,0.24v-0.24l-0.24,0.24h-0.48l-1.92-1.2l-0.72-0.48l-0.479-0.24
@@ -1264,14 +1195,8 @@ export default function MapElements() {
 				h-0.24l-0.96-0.24h-0.479v-0.24h-0.24h-0.24v0.24h-0.24h-0.239h-0.24h-0.48V261.314L716.143,261.314z"
         />
 
-        <path
+        <Borough
           id="Harrow"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M361.912,279.55h-0.24l0.24,0.24l-0.96,0.72v0.24l-0.96,0.96l-1.2,1.2l-0.96,0.72v0.72v0.48v0.48l-1.44-0.24l-0.96,1.92v0.24
 				l-0.479-0.24h-0.72v-0.24l-1.2-0.24l-0.72-0.24h-0.24l-0.72-0.24h-0.48h-0.479h-0.24l-2.88-0.24h-0.72h-1.2h-0.48v-0.24h-0.72
@@ -1334,14 +1259,8 @@ export default function MapElements() {
 				v0.48h-0.72h-0.48h-0.239h-0.48l-0.24,0.24h-0.239h-0.24L361.912,279.55L361.912,279.55z"
         />
 
-        <path
+        <Borough
           id="Havering"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M1183.413,387.531l-0.24,0.48v0.72v1.92l-0.24,1.44v2.159h-0.96l-1.439,0.24h-0.721h-0.239h-0.48l-4.08,0.72l-2.64,0.24
 				l-1.2,0.24l-3.12,0.48l-1.92,0.24h-0.239h-0.48l-0.479,0.24h-1.92h-1.2l-1.2,0.24h-5.52l-2.641-0.24h-0.239h-0.96l-1.44-0.24
@@ -1473,14 +1392,8 @@ export default function MapElements() {
 				l-0.48,0.24L1183.413,387.531L1183.413,387.531z"
         />
 
-        <path
+        <Borough
           id="Hillingdon"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M168.716,439.121l-0.479-0.24v-0.24h-0.24h-0.24l-0.239-0.24h-0.24l-0.24-0.24h-0.24h-0.239l-0.24-0.24h-0.24h-0.24h-0.239
 				l-0.24-0.24h-0.24h-0.24h-0.239h-0.24h-0.24l-1.2-0.24h-1.68l-1.439-0.24h-0.96l-1.2-0.24h-0.24v-0.24h-0.24h-0.24h-0.239h-0.24
@@ -1644,14 +1557,8 @@ export default function MapElements() {
 				L168.716,439.121L168.716,439.121z"
         />
 
-        <path
+        <Borough
           id="Hounslow"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M224.155,423.524h0.239l0.48-0.24h0.479l0.48-0.24h0.479l0.24,0.24h0.48v-0.24v-0.24l0.24-0.24l0.72-0.24l1.2-0.24l1.68-0.48
 				l0.479-0.24l1.92-0.48l2.4-0.959l2.64-0.72l2.4-0.72h0.24l-0.24-0.48l-0.24-0.48l-0.48-0.24l-0.479-0.48l-1.2-0.48l-0.24-0.24
@@ -1764,14 +1671,8 @@ export default function MapElements() {
 				l1.439-0.72l1.68-0.48L224.155,423.524L224.155,423.524z"
         />
 
-        <path
+        <Borough
           id="Islington"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M654.465,265.872l0.48-0.24l0.72-0.24l0.24-0.24l0.72-0.24h0.24l0.24-0.24l0.72-0.24l0.239-0.24h0.48l0.48-0.24l0.239-0.24
 				l1.44-0.72l1.199-0.72h0.48l0.24-0.24h0.24h0.239l0.48-0.24l0.479-0.24h0.48l0.479-0.24h0.24h0.24l0.72-0.24h1.2l0.479-0.24h0.96
@@ -1814,14 +1715,8 @@ export default function MapElements() {
 				l0.24-0.24H654.465L654.465,265.872z"
         />
 
-        <path
+        <Borough
           id="Kensington_and_Chelsea"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M628.065,386.331v0.24l0.24,0.48l0.24,0.24l0.24,0.72l-0.96,0.48l1.439,0.959l2.16,1.2l2.64,1.92l0.48,0.24l1.68,0.96l0.24,0.24
 				l0.239,0.24v0.48l0.24,1.44h-0.72l-3.84,0.72h-0.24h-0.24h-0.239l-0.24,0.24h-0.48h-0.239h-0.24l-0.96,0.24h-1.2l-3.359,0.48
@@ -1863,14 +1758,8 @@ export default function MapElements() {
 				L628.065,386.331z"
         />
 
-        <path
+        <Borough
           id="Kingston_upon_Thames"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M362.872,632.047v-0.24h0.24h0.239v-0.24l0.721-0.24l0.239-0.24l0.48-0.24v-0.24l0.24-0.24l0.239-0.24v-0.24l-0.239-0.48v-0.48
 				v-0.72l-0.24-0.24l-0.24-0.24v-0.48v-0.24l-0.24-0.24v-0.24v-0.24v-0.24v-0.72v-0.72l0.24-0.48v-0.24v-0.24l0.24-0.48v-0.48
@@ -1953,14 +1842,8 @@ export default function MapElements() {
 				l-0.239-0.48v-0.24l-0.24-0.24l-0.24-0.24v-0.48l-0.24-0.24l0.24-0.24V632.047z"
         />
 
-        <path
+        <Borough
           id="Lambeth"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M745.423,493.112v0.24h-0.24v0.24v0.48h-0.239v0.24h0.239h-0.239l-0.721,0.24h-0.239h-0.721h-0.479h-0.48h-0.239h-1.92h-0.721
 				h-0.96h-0.72l-0.72,0.24l-1.68,0.24l-0.96,0.24h-0.48h-0.24h-0.239l-0.24-0.24h-0.24h-0.479l-0.24-0.24l-1.2-0.24l-0.24-0.24
@@ -2028,14 +1911,8 @@ export default function MapElements() {
 				l0.72,0.24l-0.239,0.72l-0.24,0.24v0.24h0.24L745.423,493.112L745.423,493.112z"
         />
 
-        <path
+        <Borough
           id="Lewisham"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M794.141,438.162v-0.24l0.24-0.24l0.24-0.72l0.239-0.24l0.24-0.48l0.24-1.2l0.24-0.24v-0.48v-0.72l0.239-0.48v-0.48v-0.48v-0.72
 				l-0.239-0.72v-0.72l-0.24-0.48v-0.48l-0.48-0.96l-0.479-0.72l-0.24-0.24l-0.24-0.24l-0.479-0.48h-0.24l-0.24-0.48h-0.479
@@ -2123,14 +2000,8 @@ export default function MapElements() {
 				L794.141,438.162z"
         />
 
-        <path
+        <Borough
           id="Merton"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M547.427,542.783h-0.24l-0.479-0.24h-0.24l-0.48-0.24l-0.239,0.24h-0.24l0.24,0.24h-0.24l-0.24,0.24v0.24h-0.24l-0.479,0.48
 				l-0.24,0.24l-0.479,0.48l-0.48,0.24l-0.24,0.48l-0.239,0.24l-0.24,0.24l-0.24,0.24l-0.24,0.24l-0.239,0.24l-0.24,0.24l-0.24,0.24
@@ -2202,14 +2073,8 @@ export default function MapElements() {
 				l-1.92-1.68l-2.16,1.68l-1.68-0.72l-0.96-0.24l-0.96-0.48l-0.479-0.24l-0.24-0.24l-1.44-0.72L547.427,542.783L547.427,542.783z"
         />
 
-        <path
+        <Borough
           id="Newham"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M908.138,378.653l-1.92,0.24h-1.439h-1.68h-1.44l-1.2-0.24l-1.199-0.24l-1.92-0.24l-1.92-0.72l-1.2-0.24l-0.96-0.48l-1.2-0.48
 				l-1.2-0.48l-2.159-1.2l-0.96-0.48l-0.24-0.24l-0.72-0.48l-1.2-1.199l-1.2-0.96l-0.72-0.72l-0.72-0.48l-1.681-1.68l-1.199-0.959
@@ -2279,14 +2144,8 @@ export default function MapElements() {
 				l-2.16,0.24L908.138,378.653L908.138,378.653z"
         />
 
-        <path
+        <Borough
           id="Redbridge"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M1088.854,222.92l-0.239-0.24l-0.721-0.24l-1.68-0.24l-1.2,0.72l-4.319,2.64l-1.44,0.959l-0.96,0.48l-1.2,0.72l-2.399,1.68
 				l-1.92,0.96v0.24h-0.24l-1.2,0.48l-1.439,0.72l-3.84,1.92l-1.681,0.72l-2.399,1.2l-1.44,0.72l0.24,0.72l0.24,0.24l0.24,0.72
@@ -2380,14 +2239,8 @@ export default function MapElements() {
 				l-0.239,0.48v0.24l-0.48,1.2l-0.239,1.44l-0.24,0.48L1088.854,222.92L1088.854,222.92z"
         />
 
-        <path
+        <Borough
           id="Richmond_upon_Thames"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M330.953,512.309l-0.48-0.24l-0.96-0.72l-0.479-0.24l-1.2-0.48l-0.48-0.24l-0.479-0.24l-1.2-0.72v-0.24v-0.24v-0.24v-0.24v-0.24
 				h-0.24l-0.479-0.24l-1.44-0.48l-0.72-0.24h-0.48l-0.479-0.24h-0.24l-0.72-0.24h-0.24l-0.479-0.24l-0.24-0.24h-0.24h-0.72
@@ -2483,14 +2336,8 @@ export default function MapElements() {
 				h-0.24l-0.24-0.24l-0.479-0.24h-0.48L330.953,512.309L330.953,512.309z"
         />
 
-        <path
+        <Borough
           id="Southwark"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M793.901,361.375l0.48-0.24l0.72-0.24l0.48-0.24l1.439-0.48h0.48l0.479-0.24h0.48h0.96l0.96-0.24h1.199h0.48h0.479h0.721h0.72
 				h1.2l0.96,0.24h0.479h0.72l0.24,0.24l0.96,0.24l1.2,0.24l0.479,0.24l0.96,0.24l0.96,0.24l1.2,0.48l0.72,0.24h0.48l0.479,0.24
@@ -2555,14 +2402,8 @@ export default function MapElements() {
 				L793.901,361.375L793.901,361.375z"
         />
 
-        <path
+        <Borough
           id="Sutton"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M626.865,643.325l-3.359-3.599h-0.24h-0.24l-2.399,0.96l-2.4-1.92l-0.96-0.72l-0.96-0.72l-0.96-0.72h-0.239l0.96-0.48l-0.24-0.48
 				l-0.72-1.44l-0.24-0.24v-0.48v-0.24h0.24h0.479v-0.48l0.72-0.24l0.48-0.24h1.2l-1.2-2.16l-3.36,0.48l-4.56,0.48l-1.92,0.24h-0.72
@@ -2635,14 +2476,8 @@ export default function MapElements() {
 				L626.865,643.325L626.865,643.325z"
         />
 
-        <path
+        <Borough
           id="Tower_Hamlets"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M870.46,350.578v0.24l-0.24,0.24v0.24l-0.239,0.24l-0.48,0.48v0.48l-0.479,0.48l-0.721,1.2l-0.479,0.72v0.48l-0.24,0.24v0.24
 				v0.24v0.24v0.24h0.24v0.24h0.24h0.72h0.24h0.479h0.24h0.24h0.239v-0.24l0.48-0.24v-0.24l0.24-0.24v-0.48l0.239-0.72v-0.24v-0.48
@@ -2706,14 +2541,8 @@ export default function MapElements() {
 				l0.239,0.24v0.24l0.24,0.24L870.46,350.578L870.46,350.578z"
         />
 
-        <path
+        <Borough
           id="Waltham_Forest"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M795.822,279.31l-0.48-0.24l-0.48-0.48l-0.479-0.24h-0.72h-0.24l-0.24-0.24h-0.24h-0.239v-0.24h-0.24v-0.24v-0.24v-0.24v-0.24
 				h0.24l0.239-0.24l0.24-0.24v-0.24h0.24v-0.24v-0.24v-0.24v-0.24h-0.24v-0.24l-0.96-0.96h-0.239v-0.24l-0.961-0.48l-0.239-0.24
@@ -2787,14 +2616,8 @@ export default function MapElements() {
 				l-0.96,0.24h-0.239h-0.48h-0.24h-0.239h-0.24h-0.24l-0.72-0.24l-0.72-0.24h-0.48h-0.479h-0.48H795.822L795.822,279.31z"
         />
 
-        <path
+        <Borough
           id="Wandsworth"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M665.984,402.888l-0.239,0.24l-0.24,0.48l-0.24,0.24h-0.24v0.24l-0.239,0.24h-0.24v0.48l-0.24,0.24v0.24l-0.24,0.24h-0.239
 				l-0.24,0.48l-0.48,0.72l-0.72,0.959l-0.24,0.48l-0.72,0.72l-0.24,0.48v0.24l-0.239,0.24v0.48l-0.24,0.24l-0.48,0.24h-0.239
@@ -2864,14 +2687,8 @@ export default function MapElements() {
 				l-0.48,0.72h-0.24v0.24l-0.24,0.48H665.984L665.984,402.888z"
         />
 
-        <path
+        <Borough
           id="City_of_Westminster"
-          fill={svgStyles.borough.fillColor}
-          stroke={svgStyles.borough.strokeColor}
-          strokeWidth={svgStyles.borough.strokeWidth}
-          strokeLinecap={svgStyles.borough.strokeLinecap}
-          strokeLinejoin={svgStyles.borough.strokeLinejoin}
-          strokeMiterlimit={svgStyles.borough.strokeMiterlimit}
           d="
 				M556.307,322.982h0.239l0.48,0.24h0.48l0.239,0.24h0.24h0.479l0.24,0.24v0.24v0.24h0.24l0.24,0.24l0.24,0.24h0.239l0.24,0.24
 				h0.24l0.96,0.48h0.479l0.24,0.24h0.24l0.239,0.24h0.24l0.24,0.24l0.24,0.24l0.479,0.24l0.24,0.24l0.24,0.24v0.24v0.24v0.48v0.72

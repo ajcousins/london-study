@@ -12,7 +12,7 @@ interface LProps {
 }
 
 const TflService = ({ service, hoverState }: LProps) => {
-  const { hoverInfo, setHoverInfo } = hoverState;
+  const { setHoverInfo } = hoverState;
 
   const stationArr = [...service.stops];
   if (
@@ -102,12 +102,11 @@ const TflService = ({ service, hoverState }: LProps) => {
 
   return (
     <>
-      <g>
         <path
           d={bezierMaker(pixelCoords)}
           strokeWidth="5"
           stroke={service.info.hexColor}
-          fill="transparent"
+          fill="none"
         />
         {service.stops.map((node) => {
           return (
@@ -133,7 +132,6 @@ const TflService = ({ service, hoverState }: LProps) => {
             </g>
           );
         })}
-      </g>
     </>
   );
 };
