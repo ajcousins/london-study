@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/london-study/static/css/main.971c3cb6.css",
+    "main.js": "/london-study/static/js/main.df50d3f5.js",
+    "index.html": "/london-study/index.html",
+    "main.971c3cb6.css.map": "/london-study/static/css/main.971c3cb6.css.map",
+    "main.df50d3f5.js.map": "/london-study/static/js/main.df50d3f5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.971c3cb6.css",
+    "static/js/main.df50d3f5.js"
+  ]
+}
