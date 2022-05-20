@@ -2,7 +2,8 @@ import axios from 'axios';
 
 const getJourneyTime = async (cellCoords: string, target: string) => {
   const params = {
-    app_key: `${process.env.REACT_APP_TFL_API_KEY}`,
+    app_id: `${process.env.TFL_APP_ID}`,
+    app_key: `${process.env.TFL_API_KEY}`,
     time: '1400',
     timeIs: 'Departing',
   };
