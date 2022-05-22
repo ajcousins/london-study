@@ -38,7 +38,7 @@ const Option = ({ group, optionName, selected, state, options }: any) => {
 
 const DataOptions = ({ title, options, selected, state }: IProps) => {
   return (
-    <div className="section-wrapper">
+    <div className="section-wrapper section-wrapper__options">
       <div>{title}</div>
       {options.map((option) => {
         return (

@@ -82,7 +82,6 @@ h2 {
 
 .row {
   display: flex;
-  // background-color: red;
   justify-content: space-between;
 }
 
@@ -93,8 +92,62 @@ h2 {
     position: fixed;
     z-index: 100;
     padding: 0.3em 0.6em;
-    box-shadow: -2px 6px 5px 0px rgba(0, 0, 0, 0.16);
     border-radius: 0.2em;
     font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  // body {
+  // background-color: lightblue;
+  // }
+
+  h1,
+  h2 {
+    margin-top: 1.5em;
+    padding: 0 8px;
+    &.sub-heading {
+      padding: 0 8px;
+    }
+  }
+
+  .page {
+    padding: 0;
+    min-width: 100%;
+    margin: auto;
+    max-width: 1500px;
+    font-size: 0.9rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .scale {
+    order: 1;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.2em;
+    &__cell {
+      flex: 1;
+
+      margin-right: 0;
+      &__swatch {
+        width: 100%;
+      }
+      &__label {
+        font-size: 0.6rem;
+      }
+    }
+  }
+
+  .section-wrapper {
+    padding: 0 0.5em;
+    &__scale {
+      order: 1;
+    }
+    &__options {
+      order: 2;
+    }
   }
 }
